@@ -2,10 +2,12 @@
 
 
 DbConnect::DbConnect() {
-    Connect(db_);
+    if(Connect(db_)){
+        InitValues();
+    }
 }
 
-void DbConnect::Connect(QSqlDatabase& db) const{
+bool DbConnect::Connect(QSqlDatabase& db) const{
     db = QSqlDatabase::addDatabase("QPSQL");
     db.setHostName(db_data_.hostname);
     db.setDatabaseName(db_data_.db_name);
@@ -14,10 +16,10 @@ void DbConnect::Connect(QSqlDatabase& db) const{
     db.setPort(db_data_.port);
     if (!db.open()) {
           qDebug() << "Error connecting to database:" << db.lastError().text();
-          return;
+          return false;
       }
     qDebug() << "Successfully connected to PostgreSQL!";
-    InitValues();
+      return true;
 
 }
 

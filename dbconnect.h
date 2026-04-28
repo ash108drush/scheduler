@@ -21,7 +21,7 @@ public:
 private:
     db_data db_data_;
 
-    void Connect(QSqlDatabase& db) const;
+    bool Connect(QSqlDatabase& db) const;
     QSqlDatabase db_;
 };
 
