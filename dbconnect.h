@@ -16,8 +16,10 @@ class DbConnect
 {
 public:
     DbConnect();
-
+    void UpdateTimeTable(QStringList list) const;
+    QStringList GetTimeTable() const;
     void InitValues() const;
+
 private:
     db_data db_data_;
 

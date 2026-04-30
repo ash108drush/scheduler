@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QWidget>
 #include "formtable.h"
+#include "timetabledlg.h"
+
+#include "dbconnect.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 
@@ -20,8 +23,11 @@ public:
 private slots:
     void on_actionnew_window_triggered();
 
+    void on_action_time_table_triggered();
+
 private:
     Ui::MainWindow *ui;
+    std::unique_ptr<DbConnect > db_;
 
 
 };

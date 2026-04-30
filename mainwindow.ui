@@ -32,21 +32,57 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
     <property name="title">
-     <string>Menu</string>
+     <string>Меню</string>
     </property>
     <addaction name="actionnew_window"/>
    </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Справочники</string>
+    </property>
+    <addaction name="action_clients_table"/>
+    <addaction name="action_drugs_table"/>
+    <addaction name="action_doctors_table"/>
+    <addaction name="action_places_table"/>
+    <addaction name="action_time_table"/>
+   </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionnew_window">
    <property name="text">
-    <string>new window</string>
+    <string>Таблица</string>
+   </property>
+  </action>
+  <action name="action_doctors_table">
+   <property name="text">
+    <string>Врачи</string>
+   </property>
+  </action>
+  <action name="action_places_table">
+   <property name="text">
+    <string>Койки</string>
+   </property>
+  </action>
+  <action name="action_clients_table">
+   <property name="text">
+    <string>Пациенты</string>
+   </property>
+  </action>
+  <action name="action_time_table">
+   <property name="text">
+    <string>Время</string>
+   </property>
+  </action>
+  <action name="action_drugs_table">
+   <property name="text">
+    <string>Схемы препаратов</string>
    </property>
   </action>
  </widget>

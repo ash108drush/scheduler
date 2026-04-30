@@ -3,8 +3,31 @@
 
 DbConnect::DbConnect() {
     if(Connect(db_)){
-        InitValues();
+       // InitValues();
     }
+}
+
+void DbConnect::UpdateTimeTable(QStringList list) const{
+    if(db_.tables().contains("time_ranges")){
+        QSqlQuery query("TRUNCATE TABLE table_name");
+        query.exec();
+
+    }else{
+
+    }
+
+}
+
+QStringList DbConnect::GetTimeTable() const{
+    QStringList list = {};
+    if(db_.tables().contains("time_ranges")){
+        QSqlQuery query("SELECT * FROM time_ranges");
+        while (query.next()) {
+            QString name = query.value("name").toString();
+            list.append(name);
+        }
+    }
+    return list;
 }
 
 bool DbConnect::Connect(QSqlDatabase& db) const{

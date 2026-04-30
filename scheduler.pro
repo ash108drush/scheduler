@@ -11,14 +11,20 @@ CONFIG += c++17
 SOURCES += \
     dbconnect.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    formtable.cpp \
+    timetabledlg.cpp
 
 HEADERS += \
     dbconnect.h \
-    mainwindow.h
+    mainwindow.h \
+    formtable.h \
+    timetabledlg.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    formtable.ui \
+    timetabledlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
